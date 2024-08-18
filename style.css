@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0c0910;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.countdown {
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.timer {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: shimmer 1s infinite alternate;
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.controls label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.controls input[type="datetime-local"] {
+    padding: 8px;
+    font-size: 16px;
+}
+
+.controls button {
+    padding: 12px 24px;
+    font-size: 16px;
+    margin-top: 10px;
+    /* Add spacing between buttons */
+    background-color: #ff00ff;
+    /* Magenta button color */
+    color: #ffffff;
+    /* White button text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    min-width: 150px;
+    /* Set minimum button width */
+}
+
+.controls button:hover {
+    background-color: #ff3399;
+    /* Lighter magenta on hover */
+}
+
+.selectedDateTime {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    display: none;
+}
+
+/* Animation */
+@keyframes shimmer {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+
+    100% {
+        text-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
+        /* Increased shadow intensity for shimmering effect */
+    }
+}
+
+/* Media queries */
+@media only screen and (max-width: 600px) {
+    .timer {
+        font-size: 36px;
+        /* Decrease font size for smaller screens */
+    }
+
+    .controls button {
+        padding: 10px 20px;
+        /* Adjust button padding for smaller screens */
+        font-size: 14px;
+        /* Decrease font size for smaller screens */
+        min-width: 120px;
+        /* Decrease minimum button width for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .timer {
+        font-size: 24px;
+        /* Further decrease font size for even smaller screens */
+    }
+
+    .controls button {
+        padding: 8px 16px;
+        /* Further adjust button padding for even smaller screens */
+        font-size: 12px;
+        /* Further decrease font size for even smaller screens */
+        min-width: 100px;
+        /* Further decrease minimum button width for even smaller screens */
+    }
+}
